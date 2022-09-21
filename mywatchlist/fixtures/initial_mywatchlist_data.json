@@ -1,0 +1,112 @@
+[
+    {
+        "model": "mywatchlist.watchlists",
+        "pk": 1,
+        "fields": {
+            "watched": "Yes",
+            "title": "Inglourious Basterds",
+            "rating": 4.5,
+            "release_date": "October 16, 2009",
+            "review": "[Inglourious Basterds] is quintessentially Tarantino and a masterpiece that will be considered a classic fifty years from now."
+        }
+    },
+    {
+        "model": "mywatchlist.watchlists",
+        "pk": 2,
+        "fields": {
+            "watched": "No",
+            "title": "Dune",
+            "rating": 4,
+            "release_date": "October 22, 2021",
+            "review": "From its opening shot to the final fade, I found myself enraptured and transported."
+        }
+    },
+    {
+       "model": "mywatchlist.watchlists",
+        "pk": 3,
+        "fields": {
+            "watched": "No",
+            "title": "Ngeri-Ngeri Sedap",
+            "rating": 4.5,
+            "release_date": "June 2, 2022",
+            "review": "The real story about Bataknese life when they take care about their children. A lot of sorrow and tear in every event. Even if you from another culture, you can still cry while watching it."
+        }
+    },
+    {
+        "model": "mywatchlist.watchlists",
+        "pk": 4,
+        "fields": {
+            "watched": "Yes",
+            "title": "Gifted",
+            "rating": 4,
+            "release_date": "April 7, 2017 ",
+            "review": "A very good watch, especially for the acting and the direction. Loved the chemistry between Chris Evans and Mckenna Grace."
+        }
+    },
+    {
+        "model": "mywatchlist.watchlists",
+        "pk": 5,
+        "fields": {
+            "watched": "Yes",
+            "title": "Good Will Hunting",
+            "rating": 5,
+            "release_date": "December 5, 1997 ",
+            "review": "Its central performances are phenomenal and its inevitable emotional release is truly powerful."
+        }
+    },
+    {
+        "model": "mywatchlist.watchlists",
+        "pk": 6,
+        "fields": {
+            "watched": "Yes",
+            "title": "Jakarta Maghrib",
+            "rating": 3.8,
+            "release_date": "July 27, 2010",
+            "review": "Salman Aristo memberi kritikan terhadap kondisi perfilman Indonesia yang memprihatinkan. Paling jelas digambarkan dalam segmen terakhir, Jalan Pintas, yang berisi keluhan tentang perfilman lokal yang dipenuhi dengan genre horror seks serta bagaimana perjuangan para filmmaker yang sedang merintis karir dalam menghadapi cibiran masyarakat yang menganggap bahwa pekerjaan mereka adalah sesuatu yang sia - sia dan tak ada artinya."
+        }
+    },
+    {
+        "model": "mywatchlist.watchlists",
+        "pk": 7,
+        "fields": {
+            "watched": "Yes",
+            "title": "fiksi",
+            "rating": 3.9,
+            "release_date": "June 19, 2008",
+            "review": "Film ini berkisah mengenai kondisi kejiwaan seorang anak yang mengalami gejala traumatis serta terlalu dikungkung dalam kemewahan semu yang sepi."
+        }
+    },
+    {
+        "model": "mywatchlist.watchlists",
+        "pk": 8,
+        "fields": {
+            "watched": "No",
+            "title": "The Lost City",
+            "rating": 3.3,
+            "release_date": "March 23, 2022",
+            "review": "A Mess of a Weak Plot and Little Chemistry"
+        }
+    },
+    {
+        "model": "mywatchlist.watchlists",
+        "pk": 9,
+        "fields": {
+            "watched": "Yes",
+            "title": "Memories Of Murder",
+            "rating": 4.5,
+            "release_date": "October 16, 2009",
+            "review": "A Gritty Murder Mystery with Political and Social Overtones. A Masterpiece that you cannot miss"
+        }
+    },
+    {
+        "model": "mywatchlist.watchlists",
+        "pk": 10,
+        "fields": {
+            "watched": "Yes",
+            "title": "500 Days Of Summer",
+            "rating": 4,
+            "release_date": "July 17, 2009",
+            "review": "A love story deftly built on unrequited love."
+        }
+    }
+]
