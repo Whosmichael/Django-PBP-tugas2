@@ -1,35 +1,46 @@
 {% extends 'base.html' %}
 
  {% block content %}
+ <html>
+  <head>
+  <style>
+  table, th, td {
+    border: 1px solid black;
+  }
+  </style>
+  </head>
+  <body>
+    
+ <body style="background-color:rgba(237, 188, 11, 0.662);">
+    <h1>Tugas 3 Assignment PBP/PBD</h1>
 
-  <h1>Tugas 3 Assignment PBP/PBD</h1>
+    <h5>Name: </h5>
+    <b>{{nama}}</b>
+    
+    <h5>Student ID: </h5>
+    <b>{{npm}}</b>
 
-  <h5>Name: </h5>
-  <b>{{nama}}</b>
-  
-  <h5>Student ID: </h5>
-  <b>{{npm}}</b>
+    <p>{{pesan}}</p>
 
-  <p>{{pesan}}</p>
-
-  <table>
-    <tr>
-      <th>Watched</th>
-      <th>Title</th>
-      <th>Rating</th>
-      <th>Release Date</th>
-      <th>Review</th>
-    </tr>
-    {% comment %} Add the data below this line {% endcomment %}
-    {% for movie in watch_list %}
+    <table>
       <tr>
-          <th>{{movie.watched}}</th>
-          <th>{{movie.title}}</th>
-          <th>{{movie.rating}}</th>
-          <th>{{movie.release_date}}</th>
-          <th>{{movie.review}}</th>
+        <th>Watched</th>
+        <th>Title</th>
+        <th>Rating</th>
+        <th>Release Date</th>
+        <th>Review</th>
       </tr>
-    {% endfor %}
-  </table>
+      {% comment %} Add the data below this line {% endcomment %}
+      {% for movie in watch_list %}
+        <tr>
+            <th>{{movie.watched}}</th>
+            <th>{{movie.title}}</th>
+            <th>{{movie.rating}}</th>
+            <th>{{movie.release_date}}</th>
+            <th>{{movie.review}}</th>
+        </tr>
+      {% endfor %}
+    </table>
+</body>
 
  {% endblock content %}
