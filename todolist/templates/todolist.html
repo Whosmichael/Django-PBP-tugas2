@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+ {% block content %}
+ <html>
+  <head>
+  <style>
+  table, th, td {
+    border: 1px solid black;
+  }
+  </style>
+  </head>
+  <body>
+    
+ <body style="background-color:rgba(255, 255, 255, 0.662);">
+    <h1>Tugas 4 Assignment PBP/PBD</h1>
+
+    <h5>Name: </h5>
+    <b>{{username}}</b>
+
+    <table>
+      <tr>
+        <th>Status</th>
+        <th>Title</th>
+        <th>Date</th>
+        <th>Description</th>
+        <th>User</th>
+      </tr>
+      {% comment %} Add the data below this line {% endcomment %}
+      {% for tasks in my_tasks %}
+          <tr>
+           <th> {% if tasks.is_finished %}
+              Sudah
+            {% else %}
+              Belum
+            {% endif %}
+            </th>
+              <th>{{tasks.title}}</th>
+              <th>{{tasks.release_date}}</th>
+              <th>{{tasks.description}}</th>
+              <th>{{tasks.user}}</th>
+          <th>
+            <button>
+              <a href="{%url 'todolist:update_task' tasks.id %}">Update</a>
+          </button>      
+          </th>
+
+          <th>
+            <button>
+              <a href="{%url 'todolist:delete_task' tasks.id %}">Delete</a>
+          </button>      
+          </th>
+
+        </tr>
+      {% endfor %}
+    </table>
+    <button>
+        <a href="{%url 'todolist:create_task' %}">Add New Task</a>
+    </button>
+
+    <button>
+        <a href="{%url 'todolist:logout_user' %}">Logout</a>
+    </button>
+</body>
+ {% endblock content %}
