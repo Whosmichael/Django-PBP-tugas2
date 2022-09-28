@@ -42,7 +42,7 @@ def show_todolist(request):
     my_tasks = Task.objects.filter(user=request.user)
     context = {
         'my_tasks': my_tasks,
-        'username': 'Michael Baptiswa',
+        'username': request.user.username,
         'last_login': request.COOKIES['last_login'],
     }
     return render(request, "todolist.html", context)
