@@ -77,6 +77,7 @@ def register(request):
     return render(request, 'register.html', context)
 
 def login_user(request):
+    print("test")
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')

@@ -1,63 +1,65 @@
 {% extends 'base.html' %}
 
- {% block content %}
- <html>
-  <head>
-  <style>
-  table, th, td {
-    border: 1px solid black;
-  }
-  </style>
-  </head>
-  <body>
-    
- <body style="background-color:rgba(255, 255, 255, 0.662);">
-    <h1>Tugas 4 Assignment PBP/PBD</h1>
+{% block content %}
 
-    <h2>Name: {{username}} </h2>
+<style>
+   .card {
+        border-radius: 1rem;
+    }
+    .card:hover{
+    transform: scale(1.1);
 
-    <table>
-      <tr>
-        <th>Status</th>
-        <th>Title</th>
-        <th>Date</th>
-        <th>Description</th>
-        <th>User</th>
-      </tr>
-      {% comment %} Add the data below this line {% endcomment %}
+    }
+    .card{
+        transition: transform .5s;
+    }
+</style>
+<body>
+  <body style="background: linear-gradient(90deg,#8BC6EC, rgba(0,212,255,1) 100%)!important;"></body>
+  <nav class="navbar navbar-expand-lg nav nav-pills nav-justified">
+    <div class="shadow flex-sm-fill text-sm-center card bg-white bg-opacity-75 text-dark mx-4 py-2">
+        <a class="text-sm-center nav-link text-dark fw-bold" href="{% url 'todolist:create_task' %}">Create New
+            Task</a>
+    </div>
+    <div class="shadow flex-sm-fill text-sm-center card bg-white bg-opacity-75 text-dark mx-4 py-2">
+        <a class="text-sm-center nav-link text-danger fw-bold" href="{% url 'todolist:logout_user' %}">Logout</a>
+    </div>
+</nav>
+<div class="my-3 mx-5 h-100">
+
+  <h2 class="fw-bold mb-3 text-uppercase">{{request.user}}'s task</h2>
+
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xxl-6 g-4">
       {% for tasks in my_tasks %}
-          <tr>
-           <th> {% if tasks.is_finished %}
-              Sudah
-            {% else %}
-              Belum
-            {% endif %}
-            </th>
-              <th>{{tasks.title}}</th>
-              <th>{{tasks.release_date}}</th>
-              <th>{{tasks.description}}</th>
-              <th>{{tasks.user}}</th>
-          <th>
-            <button>
-              <a href="{%url 'todolist:update_task' tasks.id %}">Update</a>
-          </button>      
-          </th>
-
-          <th>
-            <button>
-              <a href="{%url 'todolist:delete_task' tasks.id %}">Delete</a>
-          </button>      
-          </th>
-
-        </tr>
+      <div class="col-sm">
+          <div class="card bg-white text-dark">
+              <div class="card-body">
+                  <h5 class="card-title">{{ tasks.title }}</h5>
+                  <p class="card-text ">{{ tasks.description }}</p>
+                  <div class="row row-cols-2">
+                      {% if tasks.is_finished %}
+                      <p class="fw-bold text-info font-roboto ">Finished</p>
+                      {% else %}
+                      <p class="fw-bold text-dark font-roboto">Not Finished</p>
+                      {% endif %}
+                      <p class="card-text text-dark font-roboto text-end">{{ tasks.release_date }}</p>
+                  </div>
+                  <div class="row g-2">
+                      <a class="btn btn-info btn-lg px-5 btn-sm"
+                          href="{% url 'todolist:update_task'  tasks.pk %}">Update</a>
+                      <a class="btn btn-danger btn-lg px-5 btn-sm"
+                          href="{% url 'todolist:delete_task'  tasks.pk %}">Delete</a>
+                  </div>
+              </div>
+          </div>
+      </div>
       {% endfor %}
-    </table>
-    <button>
-        <a href="{%url 'todolist:create_task' %}">Add New Task</a>
-    </button>
-
-    <button>
-        <a href="{%url 'todolist:logout_user' %}">Logout</a>
-    </button>
+  </div>
+            <div class="title mt-6">
+                        <p><b>Sesi terakhir login : {{ last_login }}</p></b>
+                    </div>
+                  </div>
+                </div>
 </body>
- {% endblock content %}
+
+{% endblock content %}

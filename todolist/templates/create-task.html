@@ -1,34 +1,65 @@
 {% extends 'base.html' %}
 
 {% block meta %}
-<title>Membuat Task</title>
+<title>Create Task</title>
 {% endblock meta %}
 
-{% block content %}  
+{% block content %}
+<style>
+    .card {
+        border-radius: 1rem;
+    }
+</style>
 
-<div class = "login">
-    
-    <h1>Buat Task</h1>  
+<body class="vh-100">
+    <body style="background: linear-gradient(90deg,#8BC6EC, rgba(0,212,255,1) 100%)!important;"> 
 
-        <form method="POST" >  
-            {% csrf_token %}  
-            <table>  
-                {{ form.as_table }}  
-                <tr>  
-                    <td></td>
-                    <td><input type="submit" name="submit" value="Daftar"/></td>  
-                </tr>  
-            </table>  
-        </form>
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card bg-white text-dark">
+                    <div class="card-body px-5 text-center">
+                        <div class="mb-md-5 mt-md-4 pb-1">
 
-    {% if messages %}  
-        <ul>   
-            {% for message in messages %}  
-                <li>{{ message }}</li>  
-                {% endfor %}  
-        </ul>   
-    {% endif %}
+                            <h2 class="fw-bold mb-4 text-uppercase">Create New Task</h2>
 
-</div>  
+
+
+                            <form method="POST">
+                                {% csrf_token %}
+                                <div class="form-floating mb-4 text-dark">
+                                    <input class="form-control bg-white text-dark" type="text" name="title" required=""
+                                        id="id_title" placeholder=" ">
+                                    <label class="form-label" for="id_title">Task Name</label>
+                                </div>
+
+                                <div class="form-floating mb-4 text-dark">
+                                    <textarea class="form-control bg-white text-dark" name="description" cols="30"
+                                        rows="5" required="" id="id_description" placeholder=" "> </textarea>
+                                    <label class="form-label" for="id_description">Task Description</label>
+                                </div>
+
+                                <div class="d-grid gap-2">
+                                    <input class="btn btn-info" type="submit" name="submit"
+                                        value="Create" />
+                                </div>
+                            </form>
+
+                            {% if messages %}
+                            <ul class="msg">
+                                {% for message in messages %}
+                                <li>{{ message }}</li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 {% endblock content %}
