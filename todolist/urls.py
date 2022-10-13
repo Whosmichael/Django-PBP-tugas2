@@ -23,4 +23,5 @@ urlpatterns = [
     path('delete-task/<int:id>', delete_task, name='delete_task'),
     path('json/', show_json, name='show_json'),
     path('add/', create_task_json, name='create_task_json'),
+    #urls
 ]

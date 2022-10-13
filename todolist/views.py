@@ -62,7 +62,7 @@ def create_task_json(request):
         )
     return HttpResponse("Invalid method", status_code=405)
 
-
+Print(" ")
 
 @login_required(login_url='/todolist/login/')
 @csrf_exempt
