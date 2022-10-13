@@ -52,7 +52,7 @@ def create_task_json(request):
     if request.method == "POST":
         task = Task(
             title = request.POST["title"],
-            desc = request.POST["desc"],
+            description = request.POST["description"],
             user = request.user,
         )
         task.save()
@@ -62,7 +62,6 @@ def create_task_json(request):
         )
     return HttpResponse("Invalid method", status_code=405)
 
-Print(" ")
 
 @login_required(login_url='/todolist/login/')
 @csrf_exempt
@@ -184,3 +183,20 @@ def logout_user(request):
     response = HttpResponseRedirect(reverse("todolist:login_user"))
     response.delete_cookie('last_login')
     return response
+
+
+def get_todolist_json (request):
+    tasks = Task.objects.filter(user=request.user)
+    task_serializers = serializers.serialize('json', tasks)
+    return HttpResponse(task_serializers)
+
+def add_todolist_ajax (request):
+    if request.method == 'POST':
+        title = request.POST["title"]
+        description = request.POST["description"]
+
+        new_task = Task(user=request.user, title=title, description=description, date=datetime.datetime.now())
+        new_task.save()
+
+        return HttpResponse(b"CREATED", status=201)
+    return HttpResponseNotFound()
