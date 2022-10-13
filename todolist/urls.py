@@ -6,6 +6,8 @@ from todolist.views import logout_user
 from todolist.views import show_todolist
 from todolist.views import update_task
 from todolist.views import delete_task
+from todolist.views import show_json
+from todolist.views import create_task_json   
 
 
 app_name = 'todolist'
@@ -19,4 +21,6 @@ urlpatterns = [
     path('logout/',logout_user, name='logout_user'),
     path('update-task/<int:id>', update_task, name='update_task'),
     path('delete-task/<int:id>', delete_task, name='delete_task'),
+    path('json/', show_json, name='show_json'),
+    path('add/', create_task_json, name='create_task_json'),
 ]
